@@ -1,6 +1,22 @@
 <div class="row" materialize [formGroup]="shiftsForm" ngNativeValidate>
   <div class="col m12">
     <h3 class="hs-text-color">Turnos</h3>
+    
+
+
+
+    <!--
+
+      <ion-content padding>
+      <ion-button expand="block" href="https://www.google.cl/maps/place/"></ion-button> 
+    </ion-content>
+
+
+    -->
+    
+
+
+        
   </div>
   <div class="row">
     <div class="col m4">
@@ -216,17 +232,40 @@
     <!-- <pre>{{ newsShiftSelected | json }}</pre> -->
     <table class="striped">
       <thead class="hs-color">
+         
         <tr>
           <th class="white-text">Título</th>
           <th class="white-text ">Descripción</th>
+          <th class="white-text ">Ubicacion</th>
+          <th class="white-text "></th>
         </tr>
       </thead>
-
+      
+      
+         
+      
       <tbody >
         <tr *ngFor="let new of newsShiftSelected">
           <!-- <pre>{{ shift | json }}</pre> -->
           <td>{{(new.title || 'Sin titulo')}}</td>
-          <td class="">{{(new.description || 'Sin descripción')}}</td>         
+          <td class="">{{(new.description || 'Sin descripción')}}</td>
+          <td class="">{{(new.location || 'Sin ubicacion')}}</td>
+          <td>
+            <a href="https://www.google.cl/maps/place/ {{new.location}}" class="btn btn-primary">Ir</a>
+          </td>
+          <!--
+            <td class="">{{(new.location || 'Sin ubicacion')}}</td>
+            
+            <a  class="btn-flat pading-buton-text" href="https://www.google.cl/maps/place/" target="_blank" rel="noopener noreferrer" ></a>
+
+
+
+             <td>
+            <a href="https://www.google.cl/maps/place/%20{{new.location}}" class="btn btn-primary">Select</a>
+          </td>
+
+
+          -->          
 
         </tr>
       </tbody>
